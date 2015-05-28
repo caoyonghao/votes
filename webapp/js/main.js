@@ -14,8 +14,7 @@
 
         $.ajax({
             type: "post",
-            url: "/commit",
-            data: {name: employeeName, id: employeeId, remark: employeeRemark},
+            url: "/commit?name=" + employeeName + "&id=" + employeeId + "&remark=" + employeeRemark,
             success: function(data) {
                 console.log(data);
             }
