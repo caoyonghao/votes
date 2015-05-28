@@ -1,0 +1,17 @@
+{
+  "name": "votes",
+  "version": "0.0.0",
+  "description": "VOTES",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "cyh",
+  "license": "MIT",
+  "dependencies": {
+        "fs": "0.0.2",
+        "path": "0.11.14",
+        "express": ">1.0.0",
+	"node-xlsx": ">0.0.0"
+    }
+}
