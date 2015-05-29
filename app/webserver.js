@@ -2,10 +2,22 @@ exports.start = function() {
     var express = require("express");
     var app = express();
 
+    var xlsxManager = require('./xlsxManager.js');
+    xlsxManager.init();
     app.post('/commit', function(req, res) {
-        var path = req.query.path;
-        res.send("your booking is accepted!");
+        if (!req.query.name || !req.query.id) {
+            res.send("invalid param");
+        } else {
+            var info = [req.query.name, req.query.id, req.query.remark];
+            xlsxManager.add(info);
+            res.send("your booking is accepted!");
+        }
     })
+
+    app.get('/commit', function(req, res) {
+        res.send(xlsxManager.get());
+    })
+
     app.get('/*.*', function(req, res) {
         var options = {
             root: './webapp/',
