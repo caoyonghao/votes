@@ -10,7 +10,7 @@ exports.start = function() {
         } else {
             var info = [req.query.name, req.query.id, req.query.remark];
             xlsxManager.add(info);
-            res.send("your booking is accepted!");
+            res.send("success");
         }
     })
 

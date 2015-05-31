@@ -10,3 +10,11 @@
 #banner_txt {
     font-size: 40px;
 }
+
+#result_table{
+    display: none;
+}
+
+.btn-group {
+    margin-top: 20px;
+}

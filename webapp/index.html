@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Votes</title>
+    <title>Booking</title>
     <link rel="stylesheet" href="/3rd/tinybox2/style.css">
     <link rel="stylesheet" href="/3rd/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css">
@@ -26,7 +26,7 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" id="banner_txt" href="#">Votes</a>
+                <a class="navbar-brand" data-toggle="modal" data-target="#myModal" id="banner_txt" href="#">Booking</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -36,34 +36,72 @@
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div>
-        <div class="container content">
-            <div class="row col-lg-3"></div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <blockquote>
-                        <p>1.需要小木屋的童鞋在请登记以下信息</p>
-                        <p>2.小木屋按照两人间的标准入住，每人需要补差价约200元</p>
-                    </blockquote>
-                    </blockquote>
-                    <div class="input-group" id="employee_name">
-                        <span class="input-group-addon">姓名</span>
-                        <input type="text" class="form-control" placeholder="请输入姓名">
-                    </div>
-                    <div class="input-group" id="employee_id">
-                        <span class="input-group-addon">工号</span>
-                        <input type="text" class="form-control" placeholder="请输入8位工号，位数不够前面补零">
-                    </div>
-                    <div class="input-group" id="employee_remark">
-                        <span class="input-group-addon">备注</span>
-                        <input type="text" class="form-control" placeholder="备注">
-                    </div>
-                    <button type="button" id="commit_btn" class="btn btn-info common_btn">提交</button>
-                </div>
+        <div class="container">
+            <div class="btn-group" role="group" aria-label="...">
+                <button id="post_btn" type="button" class="btn btn-default">我要报名小木屋</button>
+                <button id="result_btn" type="button" class="btn btn-default">看看预定情况</button>
             </div>
-            <div class="row col-lg-3"></div>
+
+            <div class="container content">
+                <div class="row col-lg-3"></div>
+                <div id="commit_form" class="row">
+                    <div class="col-lg-6">
+                        <blockquote>
+                            <p>1.需要小木屋的童鞋在请登记以下信息</p>
+                            <p>2.小木屋按照两人间的标准入住，每人需要补差价约200元</p>
+                        </blockquote>
+                        </blockquote>
+                        <div class="input-group" id="employee_name">
+                            <span class="input-group-addon">姓名</span>
+                            <input type="text" class="form-control" placeholder="请输入姓名">
+                        </div>
+                        <div class="input-group" id="employee_id">
+                            <span class="input-group-addon">工号</span>
+                            <input type="text" class="form-control" placeholder="请输入8位工号，位数不够前面补零">
+                        </div>
+                        <div class="input-group" id="employee_remark">
+                            <span class="input-group-addon">备注</span>
+                            <input type="text" class="form-control" placeholder="备注">
+                        </div>
+                        <button type="button" id="commit_btn" class="btn btn-info common_btn">提交</button>
+                    </div>
+                </div>
+                <table id="result_table" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>姓名</th>
+                        <th>工号</th>
+                        <th>备注</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <div class="row col-lg-3"></div>
+            </div>
         </div>
            <!-- /.container-fluid -->
     </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">about booking</h4>
+                </div>
+                <div class="modal-body">
+                    极度简单的预约系统
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="/js/main.js"></script>
 </body>
 </html>
