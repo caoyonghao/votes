@@ -6,11 +6,11 @@ exports.start = function() {
     xlsxManager.init();
     app.post('/commit', function(req, res) {
         if (!req.query.name || !req.query.id) {
-            res.send("invalid param");
+            res.send("invalid_param");
         } else {
             var info = [req.query.name, req.query.id, req.query.remark];
             xlsxManager.add(info);
-            res.send("success");
+            res.send(xlsxManager.add(info));
         }
     })
 

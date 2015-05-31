@@ -15,14 +15,15 @@ function init() {
 function addRecord(info) {
     if (!info || info && !info[ID_INDEX]) {
         console.log("xlsxManager::addRecord::ERROR INVALID PARAM");
-        return;
+        return "invalid_param";
     }
     if (isExist(info)) {
         console.log("xlsxManager::addRecord::ERROR INFO IS EXIST");
-        return;
+        return "is_exist";
     }
     bookingCache.push(info);
     writeToFile();
+    return "success";
 }
 
 function isExist(info) {

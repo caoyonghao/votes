@@ -27,6 +27,15 @@
             success: function(data) {
                 if(data == "success"){
                     query();
+                } else {
+                    var $errorInfo = $('#error_msg');
+                    if (data == "is_exist") {
+                        $errorInfo.text("该工号已经被登记了");
+                    } else if (data == "invalid_param") {
+                        $errorInfo.text("非法参数");
+                    }
+                    $errorInfo.show();
+                    setTimeout(function() {$errorInfo.hide()}, 3000);
                 }
             }
         })
